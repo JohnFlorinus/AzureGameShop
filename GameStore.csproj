@@ -4,6 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationInsightsResourceId>/subscriptions/158a4d17-dc59-4aad-ba03-ab9aedcdd988/resourceGroups/gameshop/providers/microsoft.insights/components/azuregameshop</ApplicationInsightsResourceId>
+    <UserSecretsId>276d3089-5c50-4511-9507-27f58fe91d8d</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.13.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.22.0" />
+  </ItemGroup>
 
 </Project>
