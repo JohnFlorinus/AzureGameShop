@@ -3,7 +3,7 @@
 1. git clone av https://github.com/Degendeg/cua24s_gamestore<br/>
 2. Ta bort git filer och skapa ett nytt repository med namn "AzureGameShop" via Visual Studio<br/>
 <h2>Steg 2: Skapa App Service</h2>
-1. Välj "Web App" som typ<br/>
+1. Gå till App Services -> Create -> Web App<br/>
 2. Lägg in i ny resource group "GameShop_rg"<br/>
 3. Specs:<br/>
 <i><b>
@@ -42,7 +42,13 @@ OPTIONAL: Lägg till "App Insights" som en connected service i Visual Studio (vi
 4: Skapa nytt projekt med namn "GameShopAssignment" och "Private" visibility (Public är avstängd för min organisation)<br>
 5: GameShopAssignment -> Pipelines -> Pipelines -> New pipeline<br>
 6: Välj GitHub -> Välj "AzureGameShop" repo -> Välj ASP.NET Core (pipeline template) -> Klicka "Save and run"<br>
-7: Här blev det ett fel. Eftersom att mitt projekt är privat måste jag få "parallelism" manuellt godkänd för mitt projekt för att använda Azure DevOps för CD.<br>
-8: Jag ändrade därför policyn av organisationen jag skapade för att tillåta public projects. Därefter gjorde jag steg 4-6 igen och nu funkade CD.<br>
-
+7: Här blev det ett fel. Jag måste få "parallelism" manuellt godkänd för mitt projekt för att använda Azure DevOps för CD. Jag testade att ändra min organisations policy till att tillåta public projects och skapa det återigen, men jag behövde fortfarande manuellt godkännande.<br>
 <h2>Steg 7: Storage Account</h2>
+1: Storage Account -> Create<br>
+2: Välj resource group "GameShop_rg"<br>
+3: Specs:<br>
+<i>
+  Primary Service: Azure Blob Storage<br>
+  Redundancy: LRS<br>
+</i>
+4:  
