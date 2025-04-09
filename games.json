@@ -6,7 +6,7 @@
     "Description": "Ett episkt action-äventyr där du spelar som Link och måste stoppa den onda Ganondorf från att ta över Hyrule.",
     "ReleaseYear": 1998,
     "Genre": "Action-äventyr",
-    "Cover": "https://images.nintendolife.com/82f557404ec71/legend-of-zelda-ocarina-of-time-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/0.jpg"
   },
   {
     "Id": "2",
@@ -15,7 +15,7 @@
     "Description": "Mario ger sig ut på ett tredimensionellt plattformsäventyr för att rädda prinsessan Peach från Bowser.",
     "ReleaseYear": 1996,
     "Genre": "Plattform",
-    "Cover": "https://images.nintendolife.com/f3c8baaa710cd/super-mario-64-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/1.jpg"
   },
   {
     "Id": "3",
@@ -24,7 +24,7 @@
     "Description": "En förstapersonsskjutare där du spelar som James Bond och kämpar mot fiender för att stoppa en global katastrof.",
     "ReleaseYear": 1997,
     "Genre": "FPS",
-    "Cover": "https://images.nintendolife.com/0becf36f5e461/goldeneye-007-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/2.jpg"
   },
   {
     "Id": "4",
@@ -33,7 +33,7 @@
     "Description": "Ett charmigt plattformsäventyr där björnen Banjo och fågeln Kazooie måste rädda Banjos syster från häxan Gruntilda.",
     "ReleaseYear": 1998,
     "Genre": "Plattform",
-    "Cover": "https://images.nintendolife.com/a5444f864a550/banjo-kazooie-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/3.jpg"
   },
   {
     "Id": "5",
@@ -42,7 +42,7 @@
     "Description": "Ett klassiskt racingspel där du tävlar mot vänner eller datorstyrda motståndare på ikoniska Mario-banor.",
     "ReleaseYear": 1996,
     "Genre": "Racing",
-    "Cover": "https://images.nintendolife.com/5830510298ea5/mario-kart-64-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/4.jpg"
   },
   {
     "Id": "6",
@@ -51,6 +51,6 @@
     "Description": "Donkey Kong och hans vänner måste rädda deras ö från den onda King K. Rool i detta storskaliga 3D-plattformsäventyr.",
     "ReleaseYear": 1999,
     "Genre": "Plattform",
-    "Cover": "https://images.nintendolife.com/b909aa55cd9fa/donkey-kong-64-cover.cover_large.jpg"
+    "Cover": "https://gameshopstorage.blob.core.windows.net/images/5.jpg"
   }
 ]
