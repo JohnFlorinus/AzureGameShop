@@ -1,9 +1,11 @@
 # Swedish Documentation - Azure Deployment
 Documentation for a school assignment in Azure<br>
 App Service with Continuous Deployment, Storage Account, Application Insights, IAM Access-Control & Azure Key Vault 
+
 <h2>Steg 1: Skapa Repository</h2>
 1. git clone av https://github.com/Degendeg/cua24s_gamestore<br/>
 2. Ta bort git filer och skapa ett nytt repository med namn "AzureGameShop" via Visual Studio<br/>
+
 <h2>Steg 2: Skapa App Service</h2>
 1. Gå till App Services -> Create -> Web App<br/>
 2. Lägg in i ny resource group "GameShop_rg"<br/>
@@ -17,6 +19,7 @@ App Service with Continuous Deployment, Storage Account, Application Insights, I
 5. Aktivera Application Insights<br/>
 6. Lämna resterande inställningar som default och skapa App Service<br/><br>
 <b>Du har nu en fungerande .NET MVC hemsida med Continuous Deployment via GitHub Actions och telemetri med App Insights</b>
+
 <h2>Steg 3: Begränsa åtkomsten till App Service via IAM</h2>
 1. App Service -> Access Control (IAM) -> Add -> Add Role Assignment<br/>
 2. Välj "Reader" som roll (read-only access)<br/>
@@ -28,14 +31,20 @@ App Service with Continuous Deployment, Storage Account, Application Insights, I
 8. Klicka på Review+Assign<br/><br/>
 <b>Det finns nu två nya personer som har olika nivåer av åtkomst till Game Shop hemsidan<br>
 Du kan även få en överblick och hantera personer och roller kopplade till App Servicen på IAM-sidan</b>
+
 <h2>Steg 4: Övervaka Application Insights</h2>
 1: Investigate -> Transaction Search<br>
 <b>Här kan du se den senaste telemetri data, såsom server requests tsm med response time<br><br>
 OPTIONAL: Lägg till "App Insights" som en connected service i Visual Studio (via solution explorer) på repot och pusha.<br>
 (Lägger till ett SDK som erbjuder mer tillgång till kategorisering och filtrering av analytics data i App Insights)</b>
+
 <h2>Steg 5: Automatisk skalning</h2>
 1: App Service -> Settings -> Scale out<br>
 <b>Den lägsta pricing plan för automatiserad scalability var Basic med en månadskostnad på 54,75 USD/månad, så jag skippade detta steg</b>
+
+<h2>Steg 6: Implementera SSL</h2>
+<b>Detta var en instruktion i uppgiften men eftersom HTTPS är aktiverat by default så behövdes inget göra. Det är viktigt att implementera SSL/TLS certifikat så att informationen som skickas emellan användaren och servern är krypterad och inte kan sniffas upp av en dålig aktör via <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM-attack</a>, såsom inloggningsuppgifter. SSL-Certifikat måste förnyas periodvis och brukade kostade pengar men med tjänster såsom LetsEncrypt så kan man skaffa gratis SSL-certifikat nuförtiden.</b>
+  
 <h2>Steg 6: CD Pipeline via Azure DevOps</h2>
 <i>Continuous Deployment finns redan via GitHub Actions, detta steg är för att implementera CD med Azure DevOps</i><br>
 1: Gå till https://aex.dev.azure.com/<br>
@@ -45,6 +54,7 @@ OPTIONAL: Lägg till "App Insights" som en connected service i Visual Studio (vi
 5: GameShopAssignment -> Pipelines -> Pipelines -> New pipeline<br>
 6: Välj GitHub -> Välj "AzureGameShop" repo -> Välj ASP.NET Core (pipeline template) -> Klicka "Save and run"<br>
 7: Här blev det fel. Jag måste få "parallelism" manuellt godkänd för mitt projekt för att använda Azure DevOps för CD. Jag testade att ändra min organisations policy till att tillåta public projects och skapa det återigen, men jag behövde fortfarande manuellt godkännande. Därför skickade jag formuläret men valde att fortsatt använda GitHub Actions.<br>
+
 <h2>Steg 7: Storage Account</h2>
 1: Storage Account -> Create<br>
 2: Namnge "gameshopstorage" och välj resource group "GameShop_rg"<br>
@@ -61,6 +71,7 @@ OPTIONAL: Lägg till "App Insights" som en connected service i Visual Studio (vi
 8: Klicka på varje blobfil så ser man en URL attached, ersätt den gamla bildlänken i JSON filen med respektive ny URL.<br>
 9: Pusha ändringarna av games.json till master och med GitHub Actions så kommer det automatiskt laddas upp till hemsidan<br><br>
 <b>Du hämtar nu bilderna för varje spel från din egna fillagring på Azure istället för en extern källa. För att dubbelkolla kan du använda Inspect Element på hemsidan och kolla img src</b>
+
 <h2>Steg 8: Azure Key Vault</h2>
 1: Azure Key Vault -> Create<br>
 2: Ange namn "gameshopvault" och resource group "GameShop_rg" med region "North Europe"<br>
