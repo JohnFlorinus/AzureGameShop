@@ -1,6 +1,6 @@
 # Swedish Documentation - Azure Deployment
-Dokumentation för en inlämningsuppgift i min Azure kurs<br>
-App Service(Web App) med GitHub Actions, Storage Account, Application Insights, IAM Access-Control & Azure Key Vault 
+Documentation for a school assignment in Azure<br>
+App Service with Continuous Deployment, Storage Account, Application Insights, IAM Access-Control & Azure Key Vault 
 <h2>Steg 1: Skapa Repository</h2>
 1. git clone av https://github.com/Degendeg/cua24s_gamestore<br/>
 2. Ta bort git filer och skapa ett nytt repository med namn "AzureGameShop" via Visual Studio<br/>
