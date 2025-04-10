@@ -73,11 +73,9 @@ OPTIONAL: Lägg till "App Insights" som en connected service i Visual Studio (vi
 9: Skapa APIKEY secret igen, och nu funkar det<br>
 10: Öppna repo i Visual Studio och klicka på Connected Services -> Add -> Azure Key Vault<br>
 11: Välj gameshopvault och klicka Finish<br>
-12: Gå till appsettings.json och lägg till:<br>
+12: Gå till program.cs och lägg till:<br>
 <pre>
-"KeyVault": {
-  "VaultUri": "https://gameshopvault.vault.azure.net/"
-}
+builder.Configuration.AddAzureKeyVault(new Uri("https://gameshopvault.vault.azure.net/"), new DefaultAzureCredential());
 </pre>
 13: Gå till Controllers mappen och skapa APIController.cs med kod:<br>
 <pre>

@@ -1,10 +1,11 @@
 using GameStore.Services;
 using Azure.Identity;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri")!);
-builder.Configuration.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+//var keyVaultEndpoint = new Uri(Environment.GetEnvironmentVariable("VaultUri")!);
+builder.Configuration.AddAzureKeyVault(new Uri("https://gameshopvault.vault.azure.net/"), new DefaultAzureCredential());
 
 // Lägg till tjänster för MVC och GameService
 builder.Services.AddControllersWithViews();
