@@ -113,4 +113,7 @@ namespace GameStore.Controllers
     }
 }
 </pre>
-14: Pusha till master, och nu så kan du se den super-duper hemliga api nyckeln som absolut inte ska visas till användare när du går till azuregameshop.azurewebsites.net/veryhiddenapikey
+14: Pusha till master, och nu så borde API-nyckeln kunna ses när man går till <a href="azuregameshop.azurewebsites.net/veryhiddenapikey">azuregameshop.azurewebsites.net/veryhiddenapikey</a>.
+
+<h2>Steg 9: Hemsidan fungerar lokalt men inte i produktion</h2>
+<b>Efter hemsidan var published till App Service så slutade hela hemsidan fungera med ett HTTP Error 500.30. Hemsidan fungerade när den kördes lokalt men inte i produktion. Problemet skedde endast efter Azure Key Vault implementerades så jag antog att det var något permissions med detta att göra. Jag tittade på loggarna för App Servicen och hittade en enormt lång ".NET Runtime Error". I slutet av denna errorlogg stod det: "D:\a\AzureGameShop\AzureGameShop\Program.cs:line 8" vilket sa till mig vilken specifik del av koden där felet skedde. Jag gav både min program.cs kod tillsammans med felmeddelandet till ChatGPT och den sa till mig att jag behövde aktivera "System assigned Identity" på min App Service och sedan lägga till denna identitet som en "Key Vault Secrets User" i IAM Access-Control i key vault, så att app servicen har åtkomst till att läsa hemligheter. Nu fungerade hemsidan.</b>
